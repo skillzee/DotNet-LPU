@@ -1,0 +1,14 @@
+D:\CapGemini Training LPU\Day2Demo\Day2DemoConsole\bin\Debug\net10.0\Day2DemoConsole.exe
+D:\CapGemini Training LPU\Day2Demo\Day2DemoConsole\bin\Debug\net10.0\Day2DemoConsole.deps.json
+D:\CapGemini Training LPU\Day2Demo\Day2DemoConsole\bin\Debug\net10.0\Day2DemoConsole.runtimeconfig.json
+D:\CapGemini Training LPU\Day2Demo\Day2DemoConsole\bin\Debug\net10.0\Day2DemoConsole.dll
+D:\CapGemini Training LPU\Day2Demo\Day2DemoConsole\bin\Debug\net10.0\Day2DemoConsole.pdb
+D:\CapGemini Training LPU\Day2Demo\Day2DemoConsole\obj\Debug\net10.0\Day2DemoConsole.GeneratedMSBuildEditorConfig.editorconfig
+D:\CapGemini Training LPU\Day2Demo\Day2DemoConsole\obj\Debug\net10.0\Day2DemoConsole.AssemblyInfoInputs.cache
+D:\CapGemini Training LPU\Day2Demo\Day2DemoConsole\obj\Debug\net10.0\Day2DemoConsole.AssemblyInfo.cs
+D:\CapGemini Training LPU\Day2Demo\Day2DemoConsole\obj\Debug\net10.0\Day2DemoConsole.csproj.CoreCompileInputs.cache
+D:\CapGemini Training LPU\Day2Demo\Day2DemoConsole\obj\Debug\net10.0\Day2DemoConsole.dll
+D:\CapGemini Training LPU\Day2Demo\Day2DemoConsole\obj\Debug\net10.0\refint\Day2DemoConsole.dll
+D:\CapGemini Training LPU\Day2Demo\Day2DemoConsole\obj\Debug\net10.0\Day2DemoConsole.pdb
+D:\CapGemini Training LPU\Day2Demo\Day2DemoConsole\obj\Debug\net10.0\Day2DemoConsole.genruntimeconfig.cache
+D:\CapGemini Training LPU\Day2Demo\Day2DemoConsole\obj\Debug\net10.0\ref\Day2DemoConsole.dll

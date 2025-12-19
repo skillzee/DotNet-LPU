@@ -1,0 +1,14 @@
+D:\CapGemini Training LPU\FirstPg\AddProg\bin\Debug\net10.0\AddProg.exe
+D:\CapGemini Training LPU\FirstPg\AddProg\bin\Debug\net10.0\AddProg.deps.json
+D:\CapGemini Training LPU\FirstPg\AddProg\bin\Debug\net10.0\AddProg.runtimeconfig.json
+D:\CapGemini Training LPU\FirstPg\AddProg\bin\Debug\net10.0\AddProg.dll
+D:\CapGemini Training LPU\FirstPg\AddProg\bin\Debug\net10.0\AddProg.pdb
+D:\CapGemini Training LPU\FirstPg\AddProg\obj\Debug\net10.0\AddProg.GeneratedMSBuildEditorConfig.editorconfig
+D:\CapGemini Training LPU\FirstPg\AddProg\obj\Debug\net10.0\AddProg.AssemblyInfoInputs.cache
+D:\CapGemini Training LPU\FirstPg\AddProg\obj\Debug\net10.0\AddProg.AssemblyInfo.cs
+D:\CapGemini Training LPU\FirstPg\AddProg\obj\Debug\net10.0\AddProg.csproj.CoreCompileInputs.cache
+D:\CapGemini Training LPU\FirstPg\AddProg\obj\Debug\net10.0\AddProg.dll
+D:\CapGemini Training LPU\FirstPg\AddProg\obj\Debug\net10.0\refint\AddProg.dll
+D:\CapGemini Training LPU\FirstPg\AddProg\obj\Debug\net10.0\AddProg.pdb
+D:\CapGemini Training LPU\FirstPg\AddProg\obj\Debug\net10.0\AddProg.genruntimeconfig.cache
+D:\CapGemini Training LPU\FirstPg\AddProg\obj\Debug\net10.0\ref\AddProg.dll

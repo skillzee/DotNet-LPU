@@ -1,0 +1,14 @@
+D:\CapGemini Training LPU\ShoppingApp\bin\Debug\net10.0\ShoppingApp.exe
+D:\CapGemini Training LPU\ShoppingApp\bin\Debug\net10.0\ShoppingApp.deps.json
+D:\CapGemini Training LPU\ShoppingApp\bin\Debug\net10.0\ShoppingApp.runtimeconfig.json
+D:\CapGemini Training LPU\ShoppingApp\bin\Debug\net10.0\ShoppingApp.dll
+D:\CapGemini Training LPU\ShoppingApp\bin\Debug\net10.0\ShoppingApp.pdb
+D:\CapGemini Training LPU\ShoppingApp\obj\Debug\net10.0\ShoppingApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\CapGemini Training LPU\ShoppingApp\obj\Debug\net10.0\ShoppingApp.AssemblyInfoInputs.cache
+D:\CapGemini Training LPU\ShoppingApp\obj\Debug\net10.0\ShoppingApp.AssemblyInfo.cs
+D:\CapGemini Training LPU\ShoppingApp\obj\Debug\net10.0\ShoppingApp.csproj.CoreCompileInputs.cache
+D:\CapGemini Training LPU\ShoppingApp\obj\Debug\net10.0\ShoppingApp.dll
+D:\CapGemini Training LPU\ShoppingApp\obj\Debug\net10.0\refint\ShoppingApp.dll
+D:\CapGemini Training LPU\ShoppingApp\obj\Debug\net10.0\ShoppingApp.pdb
+D:\CapGemini Training LPU\ShoppingApp\obj\Debug\net10.0\ShoppingApp.genruntimeconfig.cache
+D:\CapGemini Training LPU\ShoppingApp\obj\Debug\net10.0\ref\ShoppingApp.dll
