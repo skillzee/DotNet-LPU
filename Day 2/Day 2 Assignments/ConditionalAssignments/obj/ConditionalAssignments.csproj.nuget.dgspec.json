@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CapGemini Training LPU\\Day 2\\Day 2 Assignments\\01_height_checker\\01_height_checker.csproj": {}
+    "D:\\CapGemini Training LPU\\Day 2\\Day 2 Assignments\\ConditionalAssignments\\ConditionalAssignments.csproj": {}
   },
   "projects": {
-    "D:\\CapGemini Training LPU\\Day 2\\Day 2 Assignments\\01_height_checker\\01_height_checker.csproj": {
+    "D:\\CapGemini Training LPU\\Day 2\\Day 2 Assignments\\ConditionalAssignments\\ConditionalAssignments.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CapGemini Training LPU\\Day 2\\Day 2 Assignments\\01_height_checker\\01_height_checker.csproj",
-        "projectName": "01_height_checker",
-        "projectPath": "D:\\CapGemini Training LPU\\Day 2\\Day 2 Assignments\\01_height_checker\\01_height_checker.csproj",
+        "projectUniqueName": "D:\\CapGemini Training LPU\\Day 2\\Day 2 Assignments\\ConditionalAssignments\\ConditionalAssignments.csproj",
+        "projectName": "ConditionalAssignments",
+        "projectPath": "D:\\CapGemini Training LPU\\Day 2\\Day 2 Assignments\\ConditionalAssignments\\ConditionalAssignments.csproj",
         "packagesPath": "C:\\Users\\Parth Sharma\\.nuget\\packages\\",
-        "outputPath": "D:\\CapGemini Training LPU\\Day 2\\Day 2 Assignments\\01_height_checker\\obj\\",
+        "outputPath": "D:\\CapGemini Training LPU\\Day 2\\Day 2 Assignments\\ConditionalAssignments\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Parth Sharma\\AppData\\Roaming\\NuGet\\NuGet.Config"
