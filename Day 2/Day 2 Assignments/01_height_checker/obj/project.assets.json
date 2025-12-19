@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CapGemini Training LPU\\Day 2\\day_2_assignments\\day_2_assignments.csproj",
-      "projectName": "day_2_assignments",
-      "projectPath": "D:\\CapGemini Training LPU\\Day 2\\day_2_assignments\\day_2_assignments.csproj",
+      "projectUniqueName": "D:\\CapGemini Training LPU\\Day 2\\Day 2 Assignments\\01_height_checker\\01_height_checker.csproj",
+      "projectName": "01_height_checker",
+      "projectPath": "D:\\CapGemini Training LPU\\Day 2\\Day 2 Assignments\\01_height_checker\\01_height_checker.csproj",
       "packagesPath": "C:\\Users\\Parth Sharma\\.nuget\\packages\\",
-      "outputPath": "D:\\CapGemini Training LPU\\Day 2\\day_2_assignments\\obj\\",
+      "outputPath": "D:\\CapGemini Training LPU\\Day 2\\Day 2 Assignments\\01_height_checker\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Parth Sharma\\AppData\\Roaming\\NuGet\\NuGet.Config"
