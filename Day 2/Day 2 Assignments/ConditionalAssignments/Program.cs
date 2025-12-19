@@ -3,4 +3,8 @@ using ConditionalAssignments;
 
 Console.WriteLine("Hello, World!");
 
-HeightChecker.HeightMain();
+// HeightChecker.HeightMain();
+// LargestOfThree.LargestMain();
+// LeapYear.LeapMain();
+// Quadratic.QuadMain();
+// Admission.AdmissionMain();
