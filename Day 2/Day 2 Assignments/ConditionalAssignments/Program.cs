@@ -8,3 +8,5 @@ Console.WriteLine("Hello, World!");
 // LeapYear.LeapMain();
 // Quadratic.QuadMain();
 // Admission.AdmissionMain();
+// Electricity.ElectricityMain();
+// Vowel.VowelMain();
