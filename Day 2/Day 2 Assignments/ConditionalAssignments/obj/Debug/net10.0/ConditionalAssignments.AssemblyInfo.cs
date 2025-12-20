@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConditionalAssignments")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98eb85d323fd4b4632e51df160e7f74b1363926d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+062d3da017a063dba9c2d0dc027f5b7f724b108c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConditionalAssignments")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConditionalAssignments")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
