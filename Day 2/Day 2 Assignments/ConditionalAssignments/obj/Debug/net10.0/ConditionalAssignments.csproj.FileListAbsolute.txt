@@ -1,0 +1,15 @@
+D:\CapGemini Training LPU\Day 2\Day 2 Assignments\ConditionalAssignments\bin\Debug\net10.0\ConditionalAssignments.exe
+D:\CapGemini Training LPU\Day 2\Day 2 Assignments\ConditionalAssignments\bin\Debug\net10.0\ConditionalAssignments.deps.json
+D:\CapGemini Training LPU\Day 2\Day 2 Assignments\ConditionalAssignments\bin\Debug\net10.0\ConditionalAssignments.runtimeconfig.json
+D:\CapGemini Training LPU\Day 2\Day 2 Assignments\ConditionalAssignments\bin\Debug\net10.0\ConditionalAssignments.dll
+D:\CapGemini Training LPU\Day 2\Day 2 Assignments\ConditionalAssignments\bin\Debug\net10.0\ConditionalAssignments.pdb
+D:\CapGemini Training LPU\Day 2\Day 2 Assignments\ConditionalAssignments\obj\Debug\net10.0\ConditionalAssignments.GeneratedMSBuildEditorConfig.editorconfig
+D:\CapGemini Training LPU\Day 2\Day 2 Assignments\ConditionalAssignments\obj\Debug\net10.0\ConditionalAssignments.AssemblyInfoInputs.cache
+D:\CapGemini Training LPU\Day 2\Day 2 Assignments\ConditionalAssignments\obj\Debug\net10.0\ConditionalAssignments.AssemblyInfo.cs
+D:\CapGemini Training LPU\Day 2\Day 2 Assignments\ConditionalAssignments\obj\Debug\net10.0\ConditionalAssignments.csproj.CoreCompileInputs.cache
+D:\CapGemini Training LPU\Day 2\Day 2 Assignments\ConditionalAssignments\obj\Debug\net10.0\ConditionalAssignments.sourcelink.json
+D:\CapGemini Training LPU\Day 2\Day 2 Assignments\ConditionalAssignments\obj\Debug\net10.0\ConditionalAssignments.dll
+D:\CapGemini Training LPU\Day 2\Day 2 Assignments\ConditionalAssignments\obj\Debug\net10.0\refint\ConditionalAssignments.dll
+D:\CapGemini Training LPU\Day 2\Day 2 Assignments\ConditionalAssignments\obj\Debug\net10.0\ConditionalAssignments.pdb
+D:\CapGemini Training LPU\Day 2\Day 2 Assignments\ConditionalAssignments\obj\Debug\net10.0\ConditionalAssignments.genruntimeconfig.cache
+D:\CapGemini Training LPU\Day 2\Day 2 Assignments\ConditionalAssignments\obj\Debug\net10.0\ref\ConditionalAssignments.dll

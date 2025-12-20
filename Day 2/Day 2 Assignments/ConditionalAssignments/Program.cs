@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using ConditionalAssignments;
 
-Console.WriteLine("Hello, World!");
+// Console.WriteLine("Hello, World!");
 
 // HeightChecker.HeightMain();
 // LargestOfThree.LargestMain();
@@ -10,3 +10,6 @@ Console.WriteLine("Hello, World!");
 // Admission.AdmissionMain();
 // Electricity.ElectricityMain();
 // Vowel.VowelMain();
+// Triangle.TriangleMain();
+// Quadrant.QuadMain();
+Grade.GradeMain();
