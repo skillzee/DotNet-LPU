@@ -73,4 +73,11 @@ public class StudentBL
         return sObj.Percent;
     }
 
+
+    public void calcResult(out int myTotal, out float perc)
+    {
+        myTotal = sObj.Phy + sObj.Chem + sObj.Math;
+        perc = myTotal / 300.0f * 100;
+    }
+
 }
