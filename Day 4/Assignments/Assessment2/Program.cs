@@ -87,6 +87,66 @@ switch (p.TravelType)
         break;
 }
 
+System.Console.Write("Enter the Base Fare: " );
+
+p.BaseFare = Convert.ToDouble(Console.ReadLine());
+
+System.Console.Write("Are you gov Employee 1 for Yes 0 for No: " );
+
+p.IsGovEmp = Convert.ToBoolean(Console.ReadLine());
+
+double fareAfterClass = p.BaseFare * multiplier;
+
+double discount = 0;
+
+if (p.Age >= 60)
+{
+    discount = 30;
+}
+else if (p.IsGovEmp)
+{
+    discount = 15;
+}else if (p.Age>=5 && p.Age<=12)
+{
+    discount = 50;
+}
+else
+{
+    discount = 0;
+}
+
+
+double finalFare = fareAfterClass - (discount/100 * fareAfterClass);
+
+
+string bookingStatus = String.Empty;
+
+if (finalFare >= 10000)
+{
+    if(p.TravelType == 3)
+    {
+        bookingStatus = "Confirmed";
+    }
+    else
+    {
+        bookingStatus = "Waiting List";
+    }
+}
+else
+{
+    bookingStatus = "Confirmed";
+}
+
+
+
+
+
+// Displaying all the details Yahan krunga
+
+
+Console.WriteLine($"Passenger ID: {p.PassengerID}, \n Name: {p.PassengerName} \n Travel Type: {travelType} \n Class: {travelClass}\n Base Fare: {p.BaseFare} \n Final Fare: {finalFare} \n Discount Applied: {discount}% \n Booking Status: {bookingStatus}");
+
+
 
 
 

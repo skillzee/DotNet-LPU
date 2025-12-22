@@ -37,7 +37,7 @@ public class Passenger
         }
     }
     public int TravelType{get; set;}
-    public double BusFare{get; set;}
+    public double BaseFare{get; set;}
     public bool IsGovEmp{get; set;}
 
 
