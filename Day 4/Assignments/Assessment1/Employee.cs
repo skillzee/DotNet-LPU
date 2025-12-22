@@ -18,7 +18,7 @@ public class Employee
         }
         set
         {
-            if (age >= 21)
+            if (value >= 21)
             {
                 age = value;
             }
