@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CapGemini Training LPU\\Day 12\\Practice_Assignment\\Practice_Assignment.csproj",
+      "projectUniqueName": "D:\\CapGemini Training LPU\\Assessment2-07-01-2026\\Practice_Assignment\\Practice_Assignment.csproj",
       "projectName": "Practice_Assignment",
-      "projectPath": "D:\\CapGemini Training LPU\\Day 12\\Practice_Assignment\\Practice_Assignment.csproj",
+      "projectPath": "D:\\CapGemini Training LPU\\Assessment2-07-01-2026\\Practice_Assignment\\Practice_Assignment.csproj",
       "packagesPath": "C:\\Users\\Parth Sharma\\.nuget\\packages\\",
-      "outputPath": "D:\\CapGemini Training LPU\\Day 12\\Practice_Assignment\\obj\\",
+      "outputPath": "D:\\CapGemini Training LPU\\Assessment2-07-01-2026\\Practice_Assignment\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Parth Sharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
