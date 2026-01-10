@@ -14,8 +14,5 @@ public abstract class Transaction: IReportable
 
     public string? Description {get; set;}
 
-    public string GetSummary()
-    {
-        return $"The transaction done with ID: {ID} date {Date} amount {Amount} description {Description}";
-    }
+    public abstract string GetSummary();
 }

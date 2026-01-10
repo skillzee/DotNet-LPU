@@ -55,7 +55,9 @@ namespace EventDelegationDemo
         {
             
             Tamil tm = new Tamil();
-            GreetMessage GreetInTamil = new GreetMessage(tm);
+            GreetMessage GreetInTamil = new GreetMessage(tm.WelcomeMessage);
+
+            GreetInTamil("Parth");
 
         }
     }
