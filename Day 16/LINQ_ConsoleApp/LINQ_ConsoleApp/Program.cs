@@ -143,13 +143,13 @@ namespace LINQ_ConsoleApp
             List<Student> tempList = studentRepo.GetAllStudents();
 
             var total = tempList.Where(s => s.Gender == "Male");
-            var maleTotal = total.Select(s=> s.Fees).Sum();
+            var maleTotal = total.Select(s=> s.Fees);
 
-            //foreach(var t in total)
-            //{
-            //    Console.WriteLine();
-            //}
-            Console.WriteLine(maleTotal);
+            foreach (var t in maleTotal)
+            {
+                Console.WriteLine(t);
+            }
+            //Console.WriteLine(maleTotal);
         }
     }
 }
