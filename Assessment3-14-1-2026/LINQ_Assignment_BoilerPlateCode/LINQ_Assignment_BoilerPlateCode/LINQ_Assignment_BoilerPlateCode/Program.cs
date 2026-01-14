@@ -80,6 +80,28 @@ namespace LINQ_Assignment_BoilerPlateCode
 
 
             Console.WriteLine();
+            Console.WriteLine();
+
+            List<EmployeeProject> empProjMappings = GetEmployeeProjectMappings(employees, projects);
+            Console.WriteLine("********************Employee Project Mappings*******************");
+            foreach (var mapping in empProjMappings)
+            {
+                Console.WriteLine($"Employee: {mapping.EmployeeName} is working on Project: {mapping.ProjectName}");
+            }
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            List<Employee> unassignedEmployees = GetUnassignedEmployees(employees, projects);
+            Console.WriteLine("********************Unassigned Employees*******************");
+            foreach (var emp in unassignedEmployees)
+            {
+                Console.WriteLine($"Unassigned Employee: {emp.Name}");
+            }
+
+
+
+            Console.WriteLine();
         }
 
         // =====================================================
@@ -179,8 +201,18 @@ namespace LINQ_Assignment_BoilerPlateCode
             List<Employee> employees,
             List<Project> projects)
         {
-            // TODO: Write LINQ query here
-            throw new NotImplementedException();
+
+            var result = from emp in employees
+                         join proj in projects
+                         on emp.Id equals proj.EmployeeId
+                         select new EmployeeProject
+                            {
+                                EmployeeName = emp.Name,
+                                ProjectName = proj.ProjectName
+                            };
+             
+            return result.ToList();
+           
         }
 
         // TODO 3.2: Find employees who are NOT assigned to any project
