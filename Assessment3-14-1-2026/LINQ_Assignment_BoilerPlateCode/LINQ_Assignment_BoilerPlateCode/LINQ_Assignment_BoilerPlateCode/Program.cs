@@ -100,6 +100,17 @@ namespace LINQ_Assignment_BoilerPlateCode
             }
 
 
+            Console.WriteLine();
+            Console.WriteLine();
+
+            List<string> uniqueSkills = GetAllUniqueSkills(employees);
+            Console.WriteLine("********************Unique Skills in Organization*******************");
+            foreach (var skill in uniqueSkills)
+            {
+                Console.WriteLine($"Skill: {skill}");
+            }
+
+
 
             Console.WriteLine();
         }
@@ -234,8 +245,11 @@ namespace LINQ_Assignment_BoilerPlateCode
         static List<string> GetAllUniqueSkills(List<Employee> employees)
         {
             // TODO: Write LINQ query here
+            var uniqueSkills = (from emp in employees
+                                from skill in emp.Skills
+                                select skill).Distinct();
+            return uniqueSkills.ToList();
 
-            throw new NotImplementedException();
         }
 
         // =====================================================
