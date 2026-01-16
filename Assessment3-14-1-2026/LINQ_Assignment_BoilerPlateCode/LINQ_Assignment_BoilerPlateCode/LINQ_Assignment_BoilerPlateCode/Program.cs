@@ -31,84 +31,84 @@ namespace LINQ_Assignment_BoilerPlateCode
                 Console.WriteLine($"Name: {item.Name} with salary: {item.Salary}");
             }
 
-            Console.WriteLine();
-            Console.WriteLine();
-            List<string> employeeNames = GetEmployeeNames(employees);
-            Console.WriteLine("********************Employee Names*******************");
-            foreach (var name in employeeNames)
-            {
-                Console.WriteLine($"Employee Name: {name}");
-            }
+            //Console.WriteLine();
+            //Console.WriteLine();
+            //List<string> employeeNames = GetEmployeeNames(employees);
+            //Console.WriteLine("********************Employee Names*******************");
+            //foreach (var name in employeeNames)
+            //{
+            //    Console.WriteLine($"Employee Name: {name}");
+            //}
 
-            Console.WriteLine();
-            Console.WriteLine();
+            //Console.WriteLine();
+            //Console.WriteLine();
 
-            bool hasHR = HasHREmployees(employees);
-            Console.WriteLine("********************Has HR Employees?*******************");
-            Console.WriteLine($"Has HR Employees: {hasHR}");
-
-
-
-            Console.WriteLine();
-            Console.WriteLine();
-            List<DepartmentCount> deptCounts = GetDepartmentWiseCount(employees);
-            Console.WriteLine("********************Department Wise Count*******************");
-            foreach (var dept in deptCounts)
-            {
-                Console.WriteLine($"Department: {dept.Department} has {dept.Count} employees");
-            }
-
-
-            Console.WriteLine();
-            Console.WriteLine();
-
-
-            Employee highestPaidEmployee = GetHighestPaidEmployee(employees);
-            Console.WriteLine("********************Highest Paid Employee*******************");
-            Console.WriteLine($"Highest Paid Employee: {highestPaidEmployee.Name} with salary: {highestPaidEmployee.Salary}");
-
-            Console.WriteLine();
-            Console.WriteLine();
-
-            List<Employee> sortedEmployees = SortEmployeesBySalaryAndName(employees);
-            Console.WriteLine("********************Sorted Employees by Salary and Name*******************");
-            foreach (var emp in sortedEmployees)
-            {
-                Console.WriteLine($"Employee: {emp.Name} with salary: {emp.Salary}");
-            }
+            //bool hasHR = HasHREmployees(employees);
+            //Console.WriteLine("********************Has HR Employees?*******************");
+            //Console.WriteLine($"Has HR Employees: {hasHR}");
 
 
 
-            Console.WriteLine();
-            Console.WriteLine();
-
-            List<EmployeeProject> empProjMappings = GetEmployeeProjectMappings(employees, projects);
-            Console.WriteLine("********************Employee Project Mappings*******************");
-            foreach (var mapping in empProjMappings)
-            {
-                Console.WriteLine($"Employee: {mapping.EmployeeName} is working on Project: {mapping.ProjectName}");
-            }
-
-
-            Console.WriteLine();
-            Console.WriteLine();
-            List<Employee> unassignedEmployees = GetUnassignedEmployees(employees, projects);
-            Console.WriteLine("********************Unassigned Employees*******************");
-            foreach (var emp in unassignedEmployees)
-            {
-                Console.WriteLine($"Unassigned Employee: {emp.Name}");
-            }
+            //Console.WriteLine();
+            //Console.WriteLine();
+            //List<DepartmentCount> deptCounts = GetDepartmentWiseCount(employees);
+            //Console.WriteLine("********************Department Wise Count*******************");
+            //foreach (var dept in deptCounts)
+            //{
+            //    Console.WriteLine($"Department: {dept.Department} has {dept.Count} employees");
+            //}
 
 
-            Console.WriteLine();
-            Console.WriteLine();
+            //Console.WriteLine();
+            //Console.WriteLine();
 
-            List<string> uniqueSkills = GetAllUniqueSkills(employees);
-            Console.WriteLine("********************Unique Skills in Organization*******************");
-            foreach (var skill in uniqueSkills)
-            {
-                Console.WriteLine($"Skill: {skill}");
-            }
+
+            //Employee highestPaidEmployee = GetHighestPaidEmployee(employees);
+            //Console.WriteLine("********************Highest Paid Employee*******************");
+            //Console.WriteLine($"Highest Paid Employee: {highestPaidEmployee.Name} with salary: {highestPaidEmployee.Salary}");
+
+            //Console.WriteLine();
+            //Console.WriteLine();
+
+            //List<Employee> sortedEmployees = SortEmployeesBySalaryAndName(employees);
+            //Console.WriteLine("********************Sorted Employees by Salary and Name*******************");
+            //foreach (var emp in sortedEmployees)
+            //{
+            //    Console.WriteLine($"Employee: {emp.Name} with salary: {emp.Salary}");
+            //}
+
+
+
+            //Console.WriteLine();
+            //Console.WriteLine();
+
+            //List<EmployeeProject> empProjMappings = GetEmployeeProjectMappings(employees, projects);
+            //Console.WriteLine("********************Employee Project Mappings*******************");
+            //foreach (var mapping in empProjMappings)
+            //{
+            //    Console.WriteLine($"Employee: {mapping.EmployeeName} is working on Project: {mapping.ProjectName}");
+            //}
+
+
+            //Console.WriteLine();
+            //Console.WriteLine();
+            //List<Employee> unassignedEmployees = GetUnassignedEmployees(employees, projects);
+            //Console.WriteLine("********************Unassigned Employees*******************");
+            //foreach (var emp in unassignedEmployees)
+            //{
+            //    Console.WriteLine($"Unassigned Employee: {emp.Name}");
+            //}
+
+
+            //Console.WriteLine();
+            //Console.WriteLine();
+
+            //List<string> uniqueSkills = GetAllUniqueSkills(employees);
+            //Console.WriteLine("********************Unique Skills in Organization*******************");
+            //foreach (var skill in uniqueSkills)
+            //{
+            //    Console.WriteLine($"Skill: {skill}");
+            //}
 
 
 
@@ -123,9 +123,7 @@ namespace LINQ_Assignment_BoilerPlateCode
         static List<Employee> GetHighEarningEmployees(List<Employee> employees)
         {
             // TODO: Write LINQ query here
-            var highEarningEmployees = from emp in employees
-                                       where emp.Salary>60000
-                                       select emp;
+            var highEarningEmployees = employees.Where(x => x.Salary >= 60000);
 
             return highEarningEmployees.ToList();
 
@@ -136,8 +134,7 @@ namespace LINQ_Assignment_BoilerPlateCode
         {
             // TODO: Write LINQ query here
 
-            var employeeNames = from emp in employees
-                                select emp.Name; 
+            var employeeNames = employees.Select(x => x.Name);
             return employeeNames.ToList();
         }
 
@@ -145,11 +142,9 @@ namespace LINQ_Assignment_BoilerPlateCode
         static bool HasHREmployees(List<Employee> employees)
         {
             // TODO: Write LINQ query here
-            var IsHREmployee = from emp in employees
-                               where emp.Department == "HR"
-                               select emp;
-
+            var IsHREmployee = employees.Select(x => x.Department == "HR");
             return IsHREmployee.Any();
+
 
         }
 
@@ -268,7 +263,11 @@ namespace LINQ_Assignment_BoilerPlateCode
         static List<Employee> RemoveDuplicateEmployees(List<Employee> employees)
         {
             // TODO: Write LINQ query here
-            throw new NotImplementedException();
+            var employee = (from emp in employees
+                            select emp).Distinct();
+
+            return employee.ToList();
+  
         }
 
         // TODO 4.3: Implement pagination
