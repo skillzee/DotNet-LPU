@@ -224,41 +224,56 @@ WHERE rnk = 3;
 
 
 SELECT 
-    SalesPerson,
-    SUM(CAST(q.value AS INT) * CAST(p.value AS INT)) AS TotalSales
-FROM Sales_Raw
-CROSS APPLY STRING_SPLIT(Quantities, ',') q
-CROSS APPLY STRING_SPLIT(UnitPrices, ',') p
-GROUP BY SalesPerson
-HAVING SUM(CAST(q.value AS INT) * CAST(p.value AS INT)) > 60000;
+    sp.SalesPersonName,
+    SUM(od.Quantity * od.UnitPrice) AS TotalSales
+FROM SalesPerson sp
+JOIN Orders o
+    ON sp.SalesPersonID = o.SalesPersonID
+JOIN OrderDetails od
+    ON o.OrderID = od.OrderID
+GROUP BY sp.SalesPersonName
+HAVING SUM(od.Quantity * od.UnitPrice) > 60000;
 
 
 
 
 
-WITH CustomerTotals AS (
-    SELECT 
-        CustomerName,
-        SUM(CAST(q.value AS INT) * CAST(p.value AS INT)) AS TotalSpent
-    FROM Sales_Raw
-    CROSS APPLY STRING_SPLIT(Quantities, ',') q
-    CROSS APPLY STRING_SPLIT(UnitPrices, ',') p
-    GROUP BY CustomerName
-)
-SELECT CustomerName, TotalSpent
-FROM CustomerTotals
-WHERE TotalSpent > (
-    SELECT AVG(TotalSpent) FROM CustomerTotals
+
+SELECT 
+    c.CustomerName,
+    SUM(od.Quantity * od.UnitPrice) AS TotalSpent
+FROM Customers c
+JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+JOIN OrderDetails od
+    ON o.OrderID = od.OrderID
+GROUP BY c.CustomerName
+HAVING SUM(od.Quantity * od.UnitPrice) >
+(
+    SELECT AVG(CustomerTotal)
+    FROM (
+        SELECT 
+            SUM(od2.Quantity * od2.UnitPrice) AS CustomerTotal
+        FROM Orders o2
+        JOIN OrderDetails od2
+            ON o2.OrderID = od2.OrderID
+        GROUP BY o2.CustomerID
+    ) avg_table
 );
 
 
 
 
 SELECT 
-    UPPER(CustomerName) AS CustomerName,
-    DATENAME(MONTH, CAST(OrderDate AS DATE)) AS OrderMonth,
-    OrderDate
-FROM Sales_Raw
-WHERE MONTH(CAST(OrderDate AS DATE)) = 1
-  AND YEAR(CAST(OrderDate AS DATE)) = 2026;
+    UPPER(c.CustomerName) AS CustomerName,
+    DATENAME(MONTH, o.OrderDate) AS OrderMonth,
+    o.OrderDate,
+    o.OrderID
+FROM Orders o
+JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+WHERE 
+    YEAR(o.OrderDate) = 2026
+    AND MONTH(o.OrderDate) = 1;
+
 
