@@ -10,6 +10,12 @@ namespace ConArcDemo
     {
         public static void Main(string[] args)
         {
+            StudentDAL dal = new StudentDAL();
+            List<Student> tempList = dal.ShowAllStudents();
+            foreach(Student item in tempList)
+            {
+                Console.WriteLine($"{item.RollNo} -> {item.Name}");
+            }
         }
     }
 }

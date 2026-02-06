@@ -22,8 +22,9 @@ namespace ConArcDemo
 
         public StudentDAL()
         {
+            string conStr = "Data Source=.\\sqlexpress;Initial Catalog=LPU_Db;Integrated Security=True;Trust Server Certificate=True"; // old version mein integrated security = true kaam nhi krta usmein ssip kaam ata hai
             con = new SqlConnection();
-            con.ConnectionString = "Server=.\\sqlexpress;Integrated Security=True;Database=LPU_DB;";
+            con.ConnectionString = "Server=.\\sqlexpress;Integrated Security=True;Database=LPU_DB;TrustServerCertificate=True;";
         }
 
 
@@ -31,6 +32,54 @@ namespace ConArcDemo
         {
             List<Student> studList = null;
             //Code for connected Architecture below
+
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand();
+                cmd.CommandText = "Select * from StudentInfo";
+                cmd.Connection = con;
+                cmd.CommandType = CommandType.Text;
+
+
+
+                //Holding data via reader
+                sdr = cmd.ExecuteReader();
+                DataTable myDt = new DataTable();
+                myDt.Load(sdr);
+                if (myDt.Rows.Count > 0) 
+                {
+                    studList = new List<Student>();
+                }
+
+                //Convert Table into list
+                foreach(DataRow dataRow in myDt.Rows)
+                {
+                    Student student = new Student()
+                    {
+                        RollNo = Convert.ToInt32(dataRow[0].ToString()),
+                        Name = dataRow[1].ToString(),
+                        Address = dataRow[3].ToString(),
+                        PhoneNo = dataRow[5].ToString(),
+                    };
+
+                    if (student != null) { 
+                        studList.Add(student); 
+                    }
+                }
+
+                
+
+                
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                con.Close();
+            }
 
             return studList;
         }
