@@ -16,6 +16,14 @@ namespace ConArcDemo
             {
                 Console.WriteLine($"{item.RollNo} -> {item.Name}");
             }
+
+
+
+            List<Student> search = dal.SearchByName("Absk");
+            foreach (Student item in search)
+            {
+                Console.WriteLine($"{item.RollNo} -> {item.Name}");
+            }
         }
     }
 }
