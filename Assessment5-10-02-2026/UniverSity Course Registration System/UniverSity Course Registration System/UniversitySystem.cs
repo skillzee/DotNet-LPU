@@ -49,6 +49,8 @@ namespace University_Course_Registration_System
             }
             Student student = new Student(id, name, major, maxCredits, completedCourses);
 
+            Students.Add(id, student);
+
         }
 
         public bool RegisterStudentForCourse(string studentId, string courseCode)
@@ -57,13 +59,21 @@ namespace University_Course_Registration_System
             // 1. Validate student and course existence
             // 2. Call student.AddCourse(course)
             // 3. Display meaningful messages
-            if(Students.ContainsKey(studentId) && AvailableCourses.ContainsKey(courseCode))
+            var student = Students[studentId];
+            var course = AvailableCourses[courseCode];
+
+            bool result = student.AddCourse(course);
+
+            if (result)
             {
-                Students[studentId].AddCourse(AvailableCourses[courseCode]);
-                Console.WriteLine("Student Registered for the Course");
+                Console.WriteLine("Registration successful!");
                 return true;
             }
-            return false;
+            else
+            {
+                Console.WriteLine("Registration failed.");
+                return false;
+            }
         }
 
         public bool DropStudentFromCourse(string studentId, string courseCode)

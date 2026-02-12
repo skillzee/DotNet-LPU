@@ -46,22 +46,18 @@ namespace University_Course_Registration_System
             // 1. Course should not already be registered
             // 2. Total credits + course credits <= MaxCredits
             // 3. Course prerequisites must be satisfied
-            if (RegisteredCourses.Contains(course)) return false;
+            if (RegisteredCourses.Any(c => c.CourseCode == course.CourseCode))
+                return false;
 
             int totalCredits = GetTotalCredits();
             int courseCredits = course.Credits;
-            if(totalCredits+courseCredits >= MaxCredits) return false;
+            if(totalCredits+courseCredits > MaxCredits) return false;
 
             List<String> pre = new List<string>();
 
             pre = course.Prerequisites;
-            foreach (var item in CompletedCourses) 
-            {
-                if (!pre.Contains(item))
-                {
-                    return false;
-                }
-            }
+            if (!course.HasPrerequisites(CompletedCourses))
+                return false;
 
             return true;
 
@@ -93,18 +89,18 @@ namespace University_Course_Registration_System
             // 1. Find course by code
             // 2. Remove from RegisteredCourses
             // 3. Call course.DropStudent()
-           
-            foreach(var item in RegisteredCourses)
-            {
-                if(item.CourseCode == courseCode)
-                {
-                    RegisteredCourses.Remove(item);
-                    item.DropStudent();
-                    return true;
-                }
-            }
 
+            var course = RegisteredCourses.FirstOrDefault(c => c.CourseCode == courseCode);
+
+            if (course != null)
+            {
+                RegisteredCourses.Remove(course);
+                course.DropStudent();
+                return true;
+            }
             return false;
+
+   
 
         }
 
@@ -113,7 +109,7 @@ namespace University_Course_Registration_System
             // TODO:
             // Display course code, name, and credits
             // If no courses registered, display appropriate message
-            if(RegisteredCourses == null)
+            if(RegisteredCourses.Count == 0)
             {
                 Console.WriteLine("No Registered courses");
                 return;
