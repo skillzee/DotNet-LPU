@@ -21,7 +21,7 @@ namespace Demo
         public ProductUtility()
         {
             con = new SqlConnection();
-            con.ConnectionString = "Server=.\\sqlexpress;Integrated Security = True;Database=LPU_db;TrustServerCertificate=true";
+            con.ConnectionString = "Server=.\\sqlexpress;Integrated Security = True;Database=LPU_Db;TrustServerCertificate=true";
         }
         public bool AddData(Product obj)
         {
@@ -92,6 +92,18 @@ namespace Demo
         public bool UpdateData(int id, Product obj)
         {
             throw new NotImplementedException();
+        }
+
+
+        public DataTable GetAllData()
+        {
+
+            adap1 = new SqlDataAdapter("Select * from Products", (SqlConnection)con);
+            adap1.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            ds = new DataSet();
+            adap1.Fill(ds, "Prod");
+            return ds.Tables[0];
+
         }
 
 

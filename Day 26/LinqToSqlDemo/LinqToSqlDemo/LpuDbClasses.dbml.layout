@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LpuDbClasses">
+  <DataContextMoniker Name="/LpuDbClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="51b9a776-ff83-4427-ae1f-d472f88292a0" absoluteBounds="2.75, 0.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/LpuDbClassesDataContext/Person" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aba5f4e3-0b4e-4fa6-a55b-37deacd7bb20" absoluteBounds="2.765, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7c15aae8-cc01-48d4-ae90-663e117370c7" absoluteBounds="0.5, 3.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/LpuDbClassesDataContext/StudentMark" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d379ac70-3d73-40fd-9ddb-501a8d2b23f3" absoluteBounds="0.51499999999999968, 3.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0042443c-8eb1-4a07-a34a-c8244c4e51d1" absoluteBounds="3.5, 3.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/LpuDbClassesDataContext/StudentInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4c0826e-b392-4217-a0a3-2e61ef34a737" absoluteBounds="3.5149999999999997, 3.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 4.20274983723958); (2.5 : 4.20274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LpuDbClassesDataContext/StudentInfo/StudentInfo_StudentMark" />
+      <nodes>
+        <classShapeMoniker Id="0042443c-8eb1-4a07-a34a-c8244c4e51d1" />
+        <classShapeMoniker Id="7c15aae8-cc01-48d4-ae90-663e117370c7" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

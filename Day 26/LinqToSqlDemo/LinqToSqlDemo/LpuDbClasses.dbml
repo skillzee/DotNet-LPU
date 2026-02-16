@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LPU_Db" Class="LpuDbClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=LPU_Db;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="LinqToSqlDemo.Properties.Settings" SettingsPropertyName="LPU_DbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Person" Member="Persons">
+    <Type Name="Person">
+      <Column Name="Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SocialStatus" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StudentMarks" Member="StudentMarks">
+    <Type Name="StudentMark">
+      <Column Name="srNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RollNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Phy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Chem" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Maths" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Perc" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="StudentInfo_StudentMark" Member="StudentInfo" ThisKey="RollNo" OtherKey="RollNo" Type="StudentInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StudentInfo" Member="StudentInfos">
+    <Type Name="StudentInfo">
+      <Column Name="RollNo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Age" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="LocalAddr" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PerAddress" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SchoolName" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="StudentInfo_StudentMark" Member="StudentMarks" ThisKey="RollNo" OtherKey="RollNo" Type="StudentMark" />
+    </Type>
+  </Table>
+</Database>
