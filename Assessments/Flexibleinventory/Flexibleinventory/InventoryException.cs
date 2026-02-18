@@ -18,8 +18,16 @@ namespace Flexibleinventory
         // - Constructor with message and error code
 
         // TODO: Add ErrorCode property
+        public int ErrorCode { get; set; }
 
         // TODO: Override Message property to include error code
+        public InventoryException() :base() { }
+        public InventoryException(string msg) :base(msg) { }
+        public InventoryException(string msg, Exception Errocode) :base(msg, Errocode) { }
+        public InventoryException(string msg, int Errorcode) :base($"{msg} with error code {Errorcode}") { }
+
+
+
     }
 
 }

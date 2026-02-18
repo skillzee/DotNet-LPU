@@ -9,11 +9,13 @@ namespace Flexibleinventory
     public class InventoryManager : IInventoryOperations, IReportGenerator
     {
         // TODO: Declare a private List<Product> to store products
+        List<Product> products;
         // TODO: Add a thread-safety lock object (optional)
 
         public InventoryManager()
         {
             // TODO: Initialize the products list
+            products = new List<Product>();
         }
 
         // ============ IInventoryOperations Implementation ============
@@ -32,7 +34,26 @@ namespace Flexibleinventory
             // TODO: Check for duplicate ID
             // TODO: Add to collection
             // TODO: Return true if successful
-            throw new NotImplementedException();
+            if (products == null)
+            {
+                return false;
+            }
+            foreach (var item in products)
+            {
+                if (item.ProductId == product.ProductId)
+                {
+                    return false;
+                }
+            }
+            if (product.ProductPrice < 0 || product.Quantity<0)
+            {
+                return false;
+            }
+
+            products.Add(product);
+            return true;
+
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -42,7 +63,14 @@ namespace Flexibleinventory
         public bool RemoveProduct(string productId)
         {
             // TODO: Find and remove product
-            throw new NotImplementedException();
+            var product = products.FirstOrDefault(item => item.ProductId == productId);
+            if(product == null)
+            {
+                return false;
+            }
+            products.Remove(product);
+            return true;
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -52,6 +80,13 @@ namespace Flexibleinventory
         public Product FindProduct(string productId)
         {
             // TODO: Search and return product
+            var product = products.FirstOrDefault(item=>item.ProductId == productId);
+            if( product == null )
+            {
+                return null;
+            }
+            return product;
+
             throw new NotImplementedException();
         }
 
@@ -62,7 +97,10 @@ namespace Flexibleinventory
         public List<Product> GetProductsByCategory(string category)
         {
             // TODO: Filter products by category
-            throw new NotImplementedException();
+            category = category.ToLower();
+            var filtered = products.Where(item=> item.Category.ToLower() == category);
+            return filtered.ToList();
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -75,7 +113,18 @@ namespace Flexibleinventory
         public bool UpdateQuantity(string productId, int newQuantity)
         {
             // TODO: Validate and update quantity
-            throw new NotImplementedException();
+            if (newQuantity < 0)
+            {
+                return false; 
+            }
+            var product = products.FirstOrDefault(item => item.ProductId == productId);
+            if(product == null)
+            {
+                return false;
+            } 
+            product.Quantity= newQuantity;
+            return true;
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -85,7 +134,13 @@ namespace Flexibleinventory
         public decimal GetTotalInventoryValue()
         {
             // TODO: Sum up all product values
-            throw new NotImplementedException();
+            decimal sum = 0;
+            foreach(var item in products)
+            {
+                sum += item.CalculateValue();
+            }
+            return sum;
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -94,7 +149,9 @@ namespace Flexibleinventory
         public List<Product> GetLowStockProducts(int threshold)
         {
             // TODO: Filter products with Quantity < threshold
-            throw new NotImplementedException();
+            var filtered = products.Where(item => item.Quantity < threshold);
+            return filtered.ToList();
+            //throw new NotImplementedException();
         }
 
         // ============ IReportGenerator Implementation ============
@@ -114,7 +171,26 @@ namespace Flexibleinventory
         public string GenerateInventoryReport()
         {
             // TODO: Build formatted report
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+
+
+            sb.Append("================================\n");
+            sb.Append("INVENTORY REPORT\n");
+            sb.Append("================================\n");
+            sb.Append($"Total Products: {products.Count}\n");
+            sb.Append($"Total Value: {GetTotalInventoryValue()}\n");
+            sb.Append("\n");
+            sb.Append("Product List:\n");
+            foreach(var item in products)
+            {
+                sb.Append(item.ToString());
+            }
+
+
+            return sb.ToString();
+
+
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -127,7 +203,19 @@ namespace Flexibleinventory
         public string GenerateCategorySummary()
         {
             // TODO: Group by category and summarize
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+            var grouping = products.GroupBy(item => item.Category);
+            sb.Append("CATEGORY SUMMARY\n");
+            foreach (var item in grouping)
+            {
+                string categoryName = item.Key;
+                int count = item.Count();
+                decimal totalValue = item.Sum(x => x.CalculateValue());
+                sb.Append($"{categoryName} : {count} items - Total Value: {totalValue} \n");
+            }
+
+            return sb.ToString();
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -142,7 +230,29 @@ namespace Flexibleinventory
         public string GenerateValueReport()
         {
             // TODO: Calculate statistics
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+            var mostValuable = products.OrderByDescending(item=>item.ProductPrice).First();
+            var leastValuable = products.OrderBy(item => item.ProductPrice).First();
+            decimal avg = products.Average(item => item.ProductPrice);
+            var sorted = products.OrderBy(item=>item.ProductPrice).ToList();
+            int count = sorted.Count();
+            int mid = count / 2;
+            decimal mediam = sorted[mid].ProductPrice;
+            var productsAboveAvg = products.Where(item => item.ProductPrice > avg);
+
+            sb.AppendLine("VALUE ANALYSIS REPORT");
+            sb.AppendLine($"Most Valuable Product: {mostValuable?.ProductName} - {mostValuable?.ProductPrice:C}");
+            sb.AppendLine($"Least Valuable Product: {leastValuable?.ProductName} - {leastValuable?.ProductPrice:C}");
+            sb.AppendLine($"Average Price: {avg:C}");
+            sb.AppendLine($"Median Price: {mediam:C}");
+            sb.AppendLine("Products Above Average:");
+
+            foreach (var item in productsAboveAvg)
+            {
+                sb.AppendLine($"- {item.ProductName} - {item.ProductPrice:C}");
+            }
+            return sb.ToString();
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -152,7 +262,29 @@ namespace Flexibleinventory
         public string GenerateExpiryReport(int daysThreshold)
         {
             // TODO: Find expiring grocery products
-            throw new NotImplementedException();
+            List<Product> list = new List<Product>();
+            StringBuilder sb = new StringBuilder();
+
+            foreach(GroceryProduct item in products)
+            {
+               
+
+                TimeSpan daystoExpires = DateTime.Today - item.ExpiryDate;
+                if(daystoExpires.Days <= daysThreshold)
+                {
+                    list.Add(item);
+                }
+            }
+            foreach(var item in list)
+            {
+                
+                sb.Append(item.ToString());
+                //sb.Append("\n");
+
+            }
+
+            //throw new NotImplementedException();
+            return sb.ToString();
         }
 
         // ============ Additional Methods (Optional) ============

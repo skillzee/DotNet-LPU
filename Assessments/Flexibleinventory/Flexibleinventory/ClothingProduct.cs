@@ -18,13 +18,21 @@ namespace Flexibleinventory
         // - Gender (string) - "Men", "Women", "Unisex"
         // - Season (string) - "Summer", "Winter", "All-season"
 
+        public string Size { get; set; }
+        public string Color { get; set; }
+        public string Material { get; set; }
+        public string Gender { get; set; }
+        public string Season { get; set; }
+
+
         /// <summary>
         /// TODO: Override GetProductDetails for clothing items
         /// </summary>
         public override string GetProductDetails()
         {
             // TODO: Return formatted string with size, color, material
-            throw new NotImplementedException();
+            return $"Size -> {Size}, color -> {Color}, Material -> {Material}";
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -34,17 +42,46 @@ namespace Flexibleinventory
         public bool IsValidSize()
         {
             // TODO: Validate size against allowed values
-            throw new NotImplementedException();
+            if(Size == "XS" || Size == "S" || Size == "M" || Size == "L" || Size == "XL" || Size == "XXL")
+            {
+                return true; 
+            }
+            return false;
+            //throw new NotImplementedException();
         }
 
         /// <summary>
         /// TODO: Override CalculateValue to apply seasonal discount
         /// Apply 15% discount for off-season items
         /// </summary>
+        /// 
+        public string CurrentSeason()
+        {
+            int monnth = DateTime.Now.Month;
+            if(monnth == 1 || monnth == 2 || monnth== 11 || monnth== 12)
+            {
+                return "Winter";
+            }
+            else
+            {
+                return "Summer";
+            }
+        }
         public override decimal CalculateValue()
         {
             // TODO: Apply seasonal discount logic
-            throw new NotImplementedException();
+            string currentSeason = CurrentSeason();
+            if(Season == "All-season")
+            {
+                return ProductPrice;
+            }
+            else if(Season != currentSeason)
+            {
+                return (decimal)0.85 * ProductPrice;
+            }
+            return ProductPrice;
+
+            //throw new NotImplementedException();
         }
     }
 
