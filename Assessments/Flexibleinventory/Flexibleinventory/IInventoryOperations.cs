@@ -1,15 +1,11 @@
-﻿using FlexibleInventorySystem_Practice.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlexibleInventorySystem_Practice.Interfaces
+namespace Flexibleinventory
 {
-         /// <summary>
-        /// Defines core inventory operations
-        /// </summary>
         public interface IInventoryOperations
         {
             /// <summary>
@@ -61,5 +57,6 @@ namespace FlexibleInventorySystem_Practice.Interfaces
             /// <returns>List of low stock products</returns>
             List<Product> GetLowStockProducts(int threshold);
         }
-    
-}
+
+    }
+

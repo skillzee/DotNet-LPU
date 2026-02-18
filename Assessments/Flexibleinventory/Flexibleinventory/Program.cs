@@ -1,9 +1,10 @@
 ﻿using System;
-using FlexibleInventorySystem_Practice.Services;
-using FlexibleInventorySystem_Practice.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-
-namespace FlexibleInventorySystem_Practice
+namespace Flexibleinventory
 {
     /// <summary>
     /// TODO: Implement console user interface
@@ -71,4 +72,5 @@ namespace FlexibleInventorySystem_Practice
 
         // TODO: Add other menu methods
     }
+
 }
