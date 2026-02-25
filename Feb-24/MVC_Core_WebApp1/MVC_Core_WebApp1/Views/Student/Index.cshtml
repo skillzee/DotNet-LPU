@@ -44,9 +44,11 @@
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { id=item.RollNo }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.RollNo  }) |
+                @Html.ActionLink("MyDetails", "Details1", new {  rollNo=item.RollNo  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.RollNo  }) |
+                @Html.ActionLink("ShowDummy", "Dummy", "Dummy")
             </td>
         </tr>
 }

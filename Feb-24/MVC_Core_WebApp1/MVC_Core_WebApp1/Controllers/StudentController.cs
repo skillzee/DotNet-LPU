@@ -32,7 +32,14 @@ namespace MVC_Core_WebApp1.Controllers
             return View(s);
         }
 
-     
+        //Self made
+        public ActionResult Details1(int rollNo)
+        {
+            Student s = sRepo.ShowDetailsByID(rollNo);
+            return View(s);
+        }
+
+
         public ActionResult StudentDetailsByName(string name)
         {
             return View();
