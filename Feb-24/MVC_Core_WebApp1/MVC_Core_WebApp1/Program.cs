@@ -13,12 +13,27 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
 app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseAuthorization();
 
 app.MapStaticAssets();
+
+//app.Use(async (context, next) =>
+//{
+//    await context.Response.WriteAsync("<h3> Middleware 1 called </h3>");
+//    await next.Invoke();
+//});
+
+
+//app.Run(async (context) =>
+//{
+//    await context.Response.WriteAsync("In which city you stay");
+   
+//});
+
 
 app.MapControllerRoute(
     name: "default",
