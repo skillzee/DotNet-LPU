@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Teacher Dashboard";
+}
+
+<h2>Welcome, @ViewBag.FullName</h2>
+
+<p>Teacher Dashboard</p>
+
+<ul>
+    <li><a asp-controller="Department" asp-action="Index">Manage Departments</a></li>
+    <li><a asp-controller="Course" asp-action="Index">Manage Courses</a></li>
+    <li><a asp-controller="Student" asp-action="Index">Manage Students</a></li>
+</ul>
+
+<a asp-action="Logout" asp-controller="Account" class="btn btn-danger">Logout</a>
